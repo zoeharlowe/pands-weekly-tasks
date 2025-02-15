@@ -20,6 +20,6 @@ print("The total amount is €" + euro)
 '''
 # I learned how to convert a float to a string on this website: https://bobbyhadz.com/blog/python-typeerror-can-only-concatenate-str-not-int-to-str#typeerror-can-only-concatenate-str-not-float-to-str
 
-finalAmount = str(euro)
-print("The total amount is €" + finalAmount)
+final_amount = str(euro)
+print("The total amount is €" + final_Amount)
 
