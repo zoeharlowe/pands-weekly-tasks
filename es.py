@@ -11,7 +11,8 @@ import os
 import sys
 
 # The text file I'm mainly using to test this program is 'sample.txt'.
-FILENAME = sys.argv[1]
+# This program has been tested on files with 100,000 characters, it may take too long to run with more
+FILENAME = None
 
 # Function e_count()
 def e_count():
@@ -31,12 +32,23 @@ def e_count():
 
         print(count)
 
-
 # Error handling
-try: 
-    e_count()
+# In case of no argument passed:
+if len(sys.argv) - 1 == 1:
+    FILENAME = sys.argv[1]
 
-except FileNotFoundError:
-    print(f"{FILENAME} not found")
-    sys.exit(1)
+    try:
+        e_count()
+        
+    # In case file does not exist:
+    except FileNotFoundError:
+        print(f"{FILENAME} not found")
+        sys.exit(1)
 
+    # In case file extension is incorrect: 
+    except UnicodeDecodeError:
+        print("Wrong file extension used")
+        sys.exit(1)
+
+else: 
+    print("No argument passed")
