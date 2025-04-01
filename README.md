@@ -27,7 +27,7 @@ python3 -m venv venv
 
 ```
 
-##### Activate the virtual environment:
+#### Activate the virtual environment:
 - **On Windows:**
 ```bash
 
